@@ -1,0 +1,100 @@
+.modal-dialog{
+    max-width: 50%;
+}
+.modal-header{
+    height: 80px!important;
+    padding: 10px 25px;
+
+}
+.modal-body{
+    padding: 10px 25px;
+}
+.text1{
+    color: grey;
+    font-size: 14px;
+}
+
+.search{
+    margin-bottom: 13px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+input[type=text] {
+    padding: 10px;
+    // margin-top: 8px;
+    font-size: 17px;
+    // border: none;
+    border:  1px solid grey;
+    width: 70%;
+    border-radius: 10px;
+  }
+
+.search-names{
+    // margin-left: 20px;
+    // margin-right: 20px;
+    max-height: 145px;
+    z-index: 3; 
+    overflow-y: auto;
+    position: absolute;
+    width: 64%;
+    box-shadow: 2px 2px 3px grey;
+    background-color: white;
+    border-radius: 10px;
+      .person-details{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: rgb(237, 249, 255); 
+      }   
+      .image-icon{
+        display: flex;
+        align-items: center;
+      }
+      img{
+        width: 50px;
+        border-radius: 50%;
+      } 
+      .name-details{
+        display: flex;
+        flex-direction: column;
+      }     
+      p{
+        margin: 0px;
+      }   
+      .p1{
+        font-size: 13px;
+      }  
+      .search-padding{
+        margin-bottom: 2px;
+      }
+  }
+  .add{
+    background-color: #3498db;
+    color:white;
+  }
+  input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #3498db;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

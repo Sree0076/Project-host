@@ -1,0 +1,225 @@
+.table-section
+{
+  position: relative;
+  margin-top: 1%;
+}
+
+.p-input-icon-left
+{
+  margin-left: 10px;
+}
+.search
+{
+  height: 35px;
+  width: 75%;
+}
+.table-top
+{
+  height: 20px !important;
+}
+.bi-eraser
+{
+
+  font-size:25px;
+  color: rgb(25, 84, 156);
+
+}
+
+
+.bi-send
+{
+
+  font-size:20px;
+  color: rgb(116, 15, 156);
+  margin-left: 5px;
+
+}
+
+th {
+  position: relative;
+
+}
+td{
+  font-size: 13px;
+}
+
+th p-sortIcon, th p-columnFilter {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  right: 5px;
+  top: 51%;
+  transform: translateY(-50%);
+}
+
+th:hover p-sortIcon, th:hover p-columnFilter {
+  opacity: 1;
+}
+
+.custom-overlay {
+  width: 100px;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgb(255, 255, 255); /* Subtle shadow for depth */
+}
+
+.custom-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  padding: 10px; /* Padding for clickable area */
+  border-radius: 3px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.custom-item:hover {
+  background-color: #e9ecef; /* Slightly darker grey on hover */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.custom-item i {
+  font-size: 21px; /* Icon size */
+  color: #5e11a0; /* Darker text color */
+}
+
+.custom-item:hover i {
+  color: #3683d4; /* Blue color on hover */
+}
+.bi{
+  cursor: pointer;
+}
+
+::ng-deep .p-inputtext  {
+  height: 35px;
+  padding: 0.25rem 0.1rem;
+  font-size: 0.8rem;/* Adjust width as needed */
+}
+::ng-deep .p-column-filter-matchmode-dropdown  {
+  height: 35px;
+   /* Adjust width as needed */
+}
+::ng-deep .p-dropdown-items
+{
+  padding: 0%;
+}
+
+
+th{
+  color: #256fab;
+}
+::ng-deep button
+{
+  border-radius: 50% !important;
+}
+.btn-primary
+{
+  border-radius: 8px !important;
+}
+
+
+:host ::ng-deep {
+  .p-paginator {
+      .p-paginator-current {
+          margin-left: auto;
+      }
+  }
+
+  .p-progressbar {
+      height: .5rem;
+      background-color: #D8DADC;
+
+      .p-progressbar-value {
+          background-color: #607D8B;
+      }
+  }
+
+  .table-header {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .p-calendar .p-datepicker {
+      min-width: 25rem;
+
+      td {
+          font-weight: 400;
+      }
+  }
+
+  .p-datatable.p-datatable-customers {
+      .p-datatable-header {
+          padding: 1rem;
+          text-align: left;
+          font-size: 1.5rem;
+      }
+
+      .p-paginator {
+          padding: 1rem;
+      }
+
+      .p-datatable-thead > tr > th {
+          text-align: left;
+      }
+
+      .p-datatable-tbody > tr > td {
+          cursor: auto;
+      }
+
+      .p-dropdown-label:not(.p-placeholder) {
+          text-transform: uppercase;
+      }
+  }
+
+  .p-w-100 {
+      width: 100%;
+  }
+
+  /* Responsive */
+  .p-datatable-customers .p-datatable-tbody > tr > td .p-column-title {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  :host ::ng-deep {
+      .p-datatable {
+          &.p-datatable-customers {
+              .p-datatable-thead > tr > th,
+              .p-datatable-tfoot > tr > td {
+                  display: none !important;
+              }
+
+              .p-datatable-tbody > tr {
+                  border-bottom: 1px solid var(--layer-2);
+
+                  > td {
+                      text-align: left;
+                      width: 100%;
+                      display: flex;
+                      align-items: center;
+                      border: 0 none;
+
+                      .p-column-title {
+                          min-width: 30%;
+                          display: inline-block;
+                          font-weight: bold;
+                      }
+
+                      p-progressbar {
+                          width: 100%;
+                      }
+
+                      &:last-child {
+                          border-bottom: 1px solid var(--surface-d);
+                      }
+                  }
+              }
+          }
+      }
+  }
+}

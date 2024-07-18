@@ -1,0 +1,97 @@
+
+
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$preventyon-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+:root {
+  @include mat.all-component-themes($preventyon-theme);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:root {
+    --privacy-color: linear-gradient(to right, rgba(162, 122, 215, 1), rgb(166, 120, 225));
+    --security-color:linear-gradient(to right, #2955a8, #3d6fc5);;
+    --quality-color: linear-gradient(90deg, rgba(101, 163, 246, 1) 0%, rgba(16, 107, 230, 1) 100%);
+
+    .privacy-card {
+        --card-color: var(--privacy-color);
+    }
+
+    .security-card {
+        --card-color: var(--security-color);
+    }
+
+    .quality-card {
+        --card-color: var(--quality-color);
+    }
+}
+
+.reportformcontainer {
+  display: flex;
+}
+
+/* Fixed sidebar */
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 70px; /* Adjust as needed */
+  background-color:rgb(255, 255, 255); /* Example color */
+  color: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.162);
+}
+
+.content {
+  margin-left: 80px; /* Should match sidebar width */
+  padding: 20px;
+  width: calc(100% - 80px);
+  z-index: 100; /* Adjust based on sidebar width */
+}
+
+.main-content
+{
+  padding-top: 25%;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d2d0d0; /* color of the scrollbar thumb */
+  border-radius: 10px; /* rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9c9a9a; /* color of the scrollbar thumb on hover */
+}

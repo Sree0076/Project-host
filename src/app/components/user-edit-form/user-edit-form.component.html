@@ -1,0 +1,65 @@
+<div class="report-form">
+  <h4 class="text-center title">Incident Report Form</h4>
+  <div class="form-container">
+      <form [formGroup]="viewform" (ngSubmit)="onSubmit()" class="form p-fluid form-container">
+          <div class="p-grid p-fluid m-3">
+              <div class="p-field p-col-12 p-md-4">
+                  <label for="incident-title">Incident Title</label>
+                  <input pInputText type="text" id="incident-title" formControlName="incidentTitle" required [(ngModel)]="incident.incidentTitle">
+                  <div *ngIf="viewform.get('incidentTitle')!.hasError('required') && viewform.get('incidentTitle')?.touched"
+                      class="text-danger validate">
+                      Title is required.
+                  </div>
+              </div>
+              <div class="p-field p-col-12 p-md-4">
+                  <label for="incident-occured-date">Incident Occurred Date</label>
+                  <p-calendar id="incident-occured-date" formControlName="incidentOccuredDate" dateFormat="yy-mm-dd"
+                      required [(ngModel)]="incident.incidentOccuredDate"></p-calendar>
+                  <div *ngIf="viewform.get('incidentOccuredDate')!.hasError('required') && viewform.get('incidentOccuredDate')?.touched"
+                      class="text-danger validate">
+                      Incident Occurred Date is required.
+                  </div>
+              </div>
+              <div class="p-field p-col-12 p-md-4">
+                  <label for="incident-occured-time">Incident Occurred Time</label>
+                  <input pInputText type="time" id="incident-occured-time" formControlName="incidentOccuredTime"
+                      required>
+                  <div *ngIf="viewform.get('incidentOccuredTime')!.hasError('required') && viewform.get('incidentOccuredTime')?.touched"
+                      class="text-danger validate">
+                      Incident Occurred Time is required.
+                  </div>
+              </div>
+          </div>
+
+          <div class="p-field p-fluid m-3">
+              <label for="incident-description">Incident Description</label>
+              <textarea pInputTextarea id="incident-description" rows="4" formControlName="incidentDescription"
+                  required [(ngModel)]="incident.incidentDescription"></textarea>
+              <div *ngIf="viewform.get('incidentDescription')!.hasError('required') && viewform.get('incidentDescription')?.touched"
+                  class="text-danger validate">
+                  Incident Description is required.
+              </div>
+          </div>
+          <div class="p-grid p-fluid m-3">
+              <div class="p-field p-col-12 p-md-4">
+                  <label for="incidents-type">Incident Type</label>
+                  <p-dropdown id="incidents-type" [options]="incidentTypes"
+                      formControlName="incidentType" [(ngModel)]="incident.incidentType"></p-dropdown>
+              </div>
+              <div class="p-field p-col-12 p-md-4">
+                  <label for="category">Category</label>
+                  <p-dropdown id="category" [options]="categories" formControlName="category" [(ngModel)]="incident.category"></p-dropdown>
+              </div>
+              <div class="p-field p-col-12 p-md-4">
+                  <label for="priority">Incident Priority</label>
+                  <p-dropdown id="priority" [options]="priorities" formControlName="priority" [(ngModel)]="incident.priority"></p-dropdown>
+          </div>
+            </div>
+          <div class="d-flex align-items-center justify-content-center">
+              <button type="submit" label="Submit" class="savebutton">Submit</button>
+              <button type="button" label="Save as Draft" (click)="saveAsDraft()" class="savebutton">Save as
+                  Draft</button>
+          </div>
+      </form>
+  </div>
+</div>

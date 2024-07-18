@@ -1,0 +1,40 @@
+/* Basic reset and box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+/* Fixed sidebar */
+
+
+/* Main content area */
+.main-content {
+  margin-left: 80px; /* Should match sidebar width */
+  padding: 40px;
+  padding-top: 100px;
+  width: calc(100% - 80px); /* Adjust based on sidebar width */
+}
+
+/* Card container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+ /* Adjust space between cards and tabs as needed */
+}
+
+/* Individual card */
+app-card {
+  flex: 1 1 20%; /* Adjust width of each card */
+  margin: 10px; /* Adjust space between cards */
+}
+
+
+
+

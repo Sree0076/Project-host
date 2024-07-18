@@ -1,0 +1,128 @@
+<div>
+    <h2 class="text-center title my-4">Incident View Form</h2>
+
+    <div class="container vh-100 p-4">
+        <form class="form shadow p-4 rounded">
+            <button class="editbutton" (click)="redirectToEditPage()">Edit</button>
+            <div class=" row mb-4">
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100 custom-border">
+                        <mat-label>Incident No</mat-label>
+                        <input matInput [value]="data.incidentNo" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Reported By and Role</mat-label>
+                        <input matInput [value]="data.reportedBy + ', ' + data.roleOfReporter" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Incident Title</mat-label>
+                        <input matInput [value]="data.incidentTitle" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Incident Occurred Date</mat-label>
+                        <input matInput [value]="extractDateTime().date" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Incident Occurred Time</mat-label>
+                        <input matInput [value]="extractDateTime().time" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Incident Description</mat-label>
+                        <textarea matInput rows="4" [value]="data.incidentDescription" readonly></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Incident Type</mat-label>
+                        <input matInput [value]="data.incidentType" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Category</mat-label>
+                        <input matInput [value]="data.category" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Incident Priority</mat-label>
+                        <input matInput [value]="data.priority" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Correction Completion Date</mat-label>
+                        <input matInput [value]="data.correctionCompletionDate" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Correction Actual Completion Date</mat-label>
+                        <input matInput [value]="data.correctionActualCompletionDate" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Corrective Actual Completion Date</mat-label>
+                        <input matInput [value]="data.correctiveActualCompletionDate" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Correction Details Time Taken to Close the Incident</mat-label>
+                        <input matInput [value]="data.correctionDetailsTimeTakenToCloseIncident" readonly>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Corrective Details Time Taken to Close the Incident</mat-label>
+                        <input matInput [value]="data.correctiveDetailsTimeTakenToCloseIncident" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Remarks</mat-label>
+                        <textarea matInput rows="4" [value]="data.remarks" readonly></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Status</mat-label>
+                        <input matInput [value]="data.status" readonly>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

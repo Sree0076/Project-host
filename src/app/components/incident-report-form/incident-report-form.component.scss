@@ -1,0 +1,63 @@
+.report-form {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+.form-container {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.p-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.savebutton {
+  width: 10rem;
+  height: 3.2rem;
+  background: var(--quality-color);
+  margin: 1rem;
+  color: white;
+  border-radius: 0.4rem;
+}
+
+.p-md-3,
+.p-md-4 {
+  padding: 0 !important;
+  margin: 2px !important;
+}
+
+::ng-deep input,
+button,
+select,
+optgroup,
+textarea {
+  border: 1px solid #a27ad7 !important;
+}
+
+::ng-deep .p-fileupload .p-fileupload-buttonbar {
+  border: 1px solid #a27ad7 !important;
+}
+
+::ng-deep .p-dropdown {
+  border: 1px solid #a27ad7;
+}
+
+::ng-deep .p-fileupload .p-fileupload-content {
+  border: 1px solid #a27ad7;
+}
+
+@media (min-width: 768px) {
+  .p-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .p-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

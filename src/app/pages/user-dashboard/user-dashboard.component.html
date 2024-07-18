@@ -1,0 +1,35 @@
+<app-side-bar class="side-bar"></app-side-bar>
+<div class="main-content">
+  <div class="card-container">
+
+    <div *ngFor="let item of incidentData; let i = index" [ngClass]="cardClass[i]">
+      <app-card (click)="getCategory(item.title)"
+
+        [title]="item.title"
+        [totalCount]="item.total_incidents"
+        [pendingCount]="item.pending_incidents"
+        [closedCount]="item.closed_incidents"
+        [iconSvg]="svg[i]"
+        [cardClass]="item.class">
+      </app-card>
+    </div>
+
+  </div>
+  <div id="tableRef">
+    <div class="card">
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="All Incidents"><app-table [isadmin]="false" [filterCategory]="selectedCategory"></app-table></mat-tab>
+  <mat-tab label="Drafts"> <app-table [getDraft]="true" [filterCategory]="selectedCategory"></app-table> </mat-tab>
+  <mat-tab label="Assigned Incident"> Content 3 </mat-tab>
+</mat-tab-group>
+</div>
+<!-- <div class="card">
+  <p-tabView>
+  <p-tabPanel header="All Incidents" ><app-table [isadmin]="false" [filterCategory]="selectedCategory"></app-table></p-tabPanel>
+  <p-tabPanel header="Drafts"><app-table [getDraft]="true" [filterCategory]="selectedCategory"></app-table> </p-tabPanel>
+<p-tabPanel header="Assigned Incident">Content 3</p-tabPanel>
+</p-tabView>
+  </div> -->
+</div>
+</div>
+

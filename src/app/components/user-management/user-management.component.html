@@ -1,0 +1,139 @@
+<!-- <div class="control-panel">
+  <div class="search-input">
+    <i class="bi bi-search"></i>
+    <input type="text" [(ngModel)]="nameFilter" (ngModelChange)="filterUsers()" placeholder="Search by name...">
+  </div>
+  <div class="filter-group">
+    <div class="status-filter">
+      <i class="bi bi-funnel"></i>
+      <select [(ngModel)]="statusFilter" (ngModelChange)="filterUsers()">
+        <option value="all">All Status</option>
+        <option value="active">Active</option>
+        <option value="diactive">Diactive</option>
+      </select>
+    </div>
+    <button class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add Admins</button>
+  </div>
+</div>
+<div class="table-container">
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th class="col-name">Name</th>
+        <th class="col-created-by">Created by</th>
+        <th class="col-permissions">Permissions</th>
+        <th class="col-status">Status</th>
+        <th class="col-action">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers">
+        <td class="col-name">{{ user.name }}</td>
+        <td class="col-created-by">{{ user.createdBy }}</td>
+        <td class="col-permissions">
+          <div class="permissions-group">
+            <label>
+              <input type="checkbox"
+                     [checked]="true"
+                     [disabled]="true">
+              Incident Management
+            </label>
+            <label>
+              <input type="checkbox"
+                     [checked]="true"
+                     [disabled]="true">
+              Admin Management
+            </label>
+          </div>
+        </td>
+        <td class="col-status">
+          <label class="switch">
+            <input type="checkbox"
+                   [checked]="user.status === 'active'"
+                   (change)="toggleStatus(user)"
+                   [disabled]="!user.isEditing">
+            <span class="slider round"></span>
+          </label>
+          <span [ngClass]="{'status-active': user.status === 'active', 'status-inactive': user.status === 'inactive'}">
+            {{ user.status }}
+          </span>
+        </td>
+        <td class="col-action">
+          <button *ngIf="user.isEditing" (click)="saveUser(user)" class="btn btn-success btn-sm">
+            <i class="bi bi-floppy"></i> Save
+          </button>
+          <button *ngIf="!user.isEditing" (click)="editUser(user)" class="btn btn-primary btn-sm">
+            <i class="bi bi-pencil-square"></i> Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+<div class="control-panel">
+  <div class="search-input">
+    <i class="bi bi-search"></i>
+    <input type="text" [(ngModel)]="nameFilter" (ngModelChange)="filterUsers()" placeholder="Search by name...">
+  </div>
+  <div class="filter-group">
+    <div class="status-filter">
+      <i class="bi bi-funnel"></i>
+      <select [(ngModel)]="statusFilter" (ngModelChange)="filterUsers()">
+        <option value="all">All Status</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-lg"></i> Add Admins</button>
+  </div>
+</div>
+
+<div class="table-container">
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th class="col-name">Name</th>
+        <th class="col-created-by">Created by</th>
+        <th class="col-permissions">Permissions</th>
+        <th class="col-status">Status</th>
+        <th class="col-action">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers">
+        <td class="col-name">{{ user.name }}</td>
+        <td class="col-created-by">{{ user.createdBy }}</td>
+        <td class="col-permissions">
+          <div class="permissions-group">
+            <label *ngFor="let permission of user.permissions">
+              <input type="checkbox" [checked]="true" [disabled]="true"> {{ permission }}
+            </label>
+          </div>
+        </td>
+        <td class="col-status">
+          <label class="switch">
+            <input type="checkbox"
+                   [checked]="user.status === 'active'"
+                   (change)="toggleStatus(user)"
+                   [disabled]="!user.isEditing">
+            <span class="slider round"></span>
+          </label>
+          <span [ngClass]="{'status-active': user.status === 'active', 'status-inactive': user.status === 'inactive'}">
+            {{ user.status }}
+          </span>
+        </td>
+        <td class="col-action">
+          <button *ngIf="user.isEditing" (click)="saveUser(user)" class="btn btn-success btn-sm">
+            <i class="bi bi-floppy"></i> Save
+          </button>
+          <button *ngIf="!user.isEditing" (click)="editUser(user)" class="btn btn-primary btn-sm">
+            <i class="bi bi-pencil-square"></i> Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-add-admin-modal></app-add-admin-modal>

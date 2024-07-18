@@ -1,0 +1,108 @@
+.card {
+    height: 130px;
+    width: 270px;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    margin: 0.5%;
+    background: var(--card-color);
+    border: 0px solid transparent;
+
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 200px;
+        height: 130px;
+    }
+
+    .mat-card-title {
+        font-size: 1.5rem !important;
+    }
+
+    .icon {
+        font-size: 1rem !important;
+    }
+
+    .mat-card-content {
+        font-size: 1.8rem;
+        margin-top: 0.8rem;
+    }
+
+    .status-item {
+        padding-right: 1.5rem;
+    }
+
+    .status-number {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* Adjustments for mobile phones */
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        overflow-x: hidden;
+    }
+
+    .mat-card-title {
+        font-size: 1.5rem !important;
+    }
+
+    .icon {
+        font-size: 2rem;
+    }
+
+    .mat-card-content {
+        font-size: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .status-item {
+        padding-right: 1rem;
+    }
+
+    .status-number {
+        font-size: 1.2rem;
+    }
+}
+
+.mat-card-title {
+    font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.icon {
+    font-size: 3rem;
+    padding-right: 0;
+}
+
+.mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+

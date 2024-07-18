@@ -1,0 +1,41 @@
+<div class="login-page">
+    <div class="left-box">
+        <div>
+            <img class="preventyon" src="../images/login_photos/preventyon.svg" alt="preventyon">
+        </div>
+    </div>
+    <div class="right-box">
+        <div class="login">
+            <div>
+                <img class="experion" src="../images/login_photos/experion.svg" alt="">
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="">
+                <div>
+                    <input class="login-input" type="text" formControlName="email" placeholder="Email">
+                    <div class="error">
+                        <div *ngIf="(loginForm.controls.email.touched)&&(loginForm.controls.email.hasError('required'))">
+                          <span>Email is required.</span>
+                        </div>
+                        <div *ngIf="loginForm.controls.email.hasError('email')">
+                            <span>Email is Invalid.</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input class="login-input" type="password" formControlName="password" placeholder="Password">
+                    <div class="error">
+                        <div *ngIf="(loginForm.controls.password.touched)&&(loginForm.controls.password.hasError('required'))">
+                          <span>Password is required.</span>
+                        </div>
+                        <div *ngIf="loginForm.controls.password.hasError('minlength')">
+                            <span>Password has minimum 6 Charectors</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="login-button" type="submit"><img class="login-button-icon" src="../images/login_photos/login_icon.png" alt="login icon">  Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
